@@ -1,6 +1,7 @@
 class AddStudent:
     def __init__(self, student):
         self.student_data = student
+        
     
     def add_student(self, name, age, idnum, email, phone):
         self.student_data.setName(name)
@@ -8,14 +9,18 @@ class AddStudent:
         self.student_data.setIDNum(idnum)
         self.student_data.setEmail(email)
         self.student_data.setPhoneNum(phone)
-        student = [name, age, idnum, email, phone]
-        self.student_data.allstudents.append(student)
-        print(f"Added student {student[0]} to the list.")
-
-        student = [name, age, idnum, email, phone]
+        student_written = [name, age, idnum, email, phone]
+        self.student_data.allstudents.append(student_written)
+        print(f"Added student {student_written[0]} to the list.")
+        self.write(student_written)
+        #student = [name, age, idnum, email, phone]
         
-        with open("student.txt", "a") as file:
-            file.write(f"{name},{age},{idnum},{email},{phone}")
+
+    def write(self, student_written):
+        with open ("student.txt", "a+") as file:
+            file.write(", ".join(map(str, student_written)) + "\n")
+        print(f"Done adding to the list")
+
 
     def input_add_student(self):
         while True:
