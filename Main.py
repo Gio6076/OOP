@@ -50,12 +50,10 @@ addstud, search, printAll = AddStudent(stu), SearchStudent(stu), PrintAllStudent
 #Make sure na ung pagkakasunod nung 'menu', is same dun sa initialization
 menu = MainMenu(addstud, printAll, search)
 
-addstud.add_student("Paul Ebarola", "20", "admin", "paulul@sinto2x.com", "0909-808-0909")
-addstud.add_student("Gio Ebarola", "19", "2023-2-00309", "gebarola@gmail.com", "0956-211-1234")
-addstud.add_student("Gringo", "21", "2023-2-00700", "gringos@hacker.com", "0912-123-3456")
-addstud.add_student("Lesley Bitt", "23", "2023-2-0932", "bitelesley@gov.ph", "0954-456-6784")
+
 
 attempts = 0 
+stu.read()
 while attempts < 4:
     print ("\n","="*10, "Login - Student Info. System", "="*10)
     login_check = input("Student ID: ")
@@ -71,3 +69,5 @@ while attempts < 4:
         os.system("cls")
         print("="*7, "Login Error - Student Info. System","="*7)
         print("You have exceeded the number of attempts allowed.\nExiting the System. Goodbye")
+
+        menu.login()
