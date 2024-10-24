@@ -69,5 +69,4 @@ while attempts < 4:
         os.system("cls")
         print("="*7, "Login Error - Student Info. System","="*7)
         print("You have exceeded the number of attempts allowed.\nExiting the System. Goodbye")
-
-        menu.login()
+        
